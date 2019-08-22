@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cne
+spec:
+  replicas: 10
+  progressDeadlineSeconds: 30
+  template:
+    metadata:
+      labels:
+        app: cne
+    spec:
+      containers:
+        - name: cne
+          # built with the example route working
+          image: tibbar/cloud-native-example
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

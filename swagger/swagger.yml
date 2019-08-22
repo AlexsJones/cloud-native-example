@@ -1,0 +1,69 @@
+swagger: "2.0"
+info:
+  description: ""
+  version: "1.0.0"
+  title: "Swagger Example"
+basePath: "/v1"
+tags:
+  - name: "blacklist"
+    description: "Everything about your blacklist"
+schemes:
+  - "http"
+paths:
+  /blacklist:
+    post:
+      tags:
+        - "blacklist"
+      summary: "Add a new blacklist IP to the store"
+      description: ""
+      operationId: "addToBlackList"
+      consumes:
+        - "application/json"
+        - "application/xml"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Pet object that needs to be added to the store"
+          required: true
+          schema:
+            $ref: "#/definitions/BlacklistEntry"
+      responses:
+        405:
+          description: "Invalid input"
+    get:
+      tags:
+        - "blacklist"
+      operationId: "getBlackList"
+      produces:
+        - "application/xml"
+        - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Blacklist"
+        400:
+          description: "Invalid status value"
+
+definitions:
+  BlacklistEntry:
+    type: "object"
+    properties:
+      address:
+        type: "string"
+  Blacklist:
+    type: "object"
+    properties:
+      addresses:
+        type: array
+        items:
+          type: string
+
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

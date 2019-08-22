@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cloud-native-example
+spec:
+  containers:
+    - name: cloud-native-example
+      image: tibbar/cloud-native-example
