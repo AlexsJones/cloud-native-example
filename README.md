@@ -10,6 +10,8 @@ The following technologies are used within this repo:
 - Kubernetes
 - Helm
 
+<img src="images/Cloud%20technology%20vertical.png" alt="image" width="400" />
+
 ### Overview
 
 The project contains source code to a simple docker image
