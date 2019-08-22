@@ -6,4 +6,4 @@ build:
 deploy:
   kubectl:
     manifests:
-    - k8s/local/k8s-local-vanilla.yaml
+    - k8s/local/k8s-local-dev.yaml
